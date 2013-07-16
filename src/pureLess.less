@@ -1,0 +1,150 @@
+
+/* ==========================================================================
+   Definition of some commonly used class style
+   ========================================================================== */
+
+/*
+ * Commonly used css3 properties
+ */
+.box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+    box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    -webkit-box-shadow: @arguments;
+}
+//.box-shadow(2px, 5px);
+.border-radius (@r){
+    border-radius: @r;
+    -moz-border-radius: @r;
+    -webkit-border-radius: @r;
+}
+.text-overflow (@w){
+    width: @w;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.text-indent (){
+    text-indent: -9999em;
+}
+//common css
+.break () {
+    text-wrap: wrap;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    word-wrap: break-word;
+}
+// 未知尺寸图片居中
+// 盒子 宽 高 
+.image-center(@width, @height){
+
+    @_fontsize: round(@height * 0.873);
+ 
+    width: ~'@{width}px';
+    height: ~'@{height}px';
+    overflow: hidden;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+      
+    *display: block;//IE hack
+    *font: ~"@{_fontsize}px/1em Arial";
+  
+  img{
+    max-height: ~'@{height}px';
+    max-width: ~'@{width}px';
+    vertical-align: middle;
+  }
+}
+//背景色透明 rgba
+
+.background-rgba(@red, @green, @blue, @alpha:1){
+
+    @filtercolor:`(_f = function(d){ var v = (parseInt(d)|0).toString(16);return v.length<2 ? "0"+v : v;},'#'+_f(@{alpha}*255) + _f(@{red}) + _f(@{green})+ _f(@{blue}))`;
+
+    background-color: ~'rgba(@{red},@{green},@{blue},@{alpha})';
+    -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{filtercolor}',endColorstr='@{filtercolor}')";
+    filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{filtercolor}',endColorstr='@{filtercolor}'); 
+}
+
+//透明属性
+.opacity(@opacity: 80) {
+    opacity: @opacity / 100;
+    filter: ~"alpha(opacity=@{opacity})";
+}
+
+//plain text interactive, except background color or image(Definition in current use page)!
+.linksInteractive (@c1 , @c2, @none: none, @underline: underline){
+    &:link, &:visited{
+        color: @c1;
+        text-decoration: @none;
+      }
+    &:hover, &:active{
+        color: @c2;
+        text-decoration :@underline;
+    }
+}
+//inline-block
+.dib-wrap (){
+    font-size:0;/* 所有浏览器 */
+    *word-spacing:-1px;/* IE6、7 */
+    .dib{
+        font-size: 12px;
+        letter-spacing: normal;
+        word-spacing: normal;
+        vertical-align:top;
+    }
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+/* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
+    .dib-wrap{
+        letter-spacing:-5px;/* Safari 等不支持字体大小为 0 的浏览器, 根据父级字体调节*/
+    }
+}
+.dib {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+}
+/* ==========================================================================
+   Custom shortCut
+   ========================================================================== */
+
+/* 
+ * Clear float and close label 
+ */
+
+.fn-clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.fn-clearfix { display: inline-table; }
+* html .fn-clearfix { height: 1%; /* for IE6 IE7 */}
+.fn-clearfix { display: block; } 
+
+/* 
+ * Trigger IE haslayout
+ */
+
+.fn-zoom (){zoom:1;}
+
+/* 
+ * Set inline, reduce floating brings bug 
+ */
+
+.inline (){display:inline}
+.fn-fl (){float:left;.inline;}
+.fn-fr (){float:right;.inline;}
+body .fn-hide{display:none;}
+
+/* 
+ * Used in js addClass or removeClass
+ */
+
+.fn-hide (){display:none;}
+
+
+
