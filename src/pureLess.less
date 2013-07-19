@@ -15,16 +15,25 @@
     -webkit-box-shadow: @arguments;
 }
 //.box-shadow(2px, 5px);
-.border-radius (@r: 3px){
+.border-radius (@r: 3px) {
     border-radius: @r;
     -moz-border-radius: @r;
     -webkit-border-radius: @r;
 }
 
+// webkit methods
+// -------------------------------------------------
+.multipleText-overflow (@h, @lineNum: 2, @direction: vertical) {
+    height: @h;
+    display: -webkit-box;
+    -webkit-line-clamp: @lineNum;           // 行数
+    -webkit-box-orient: @direction;         // 方向 
+    overflow: hidden;
+}
 
 // Commonly used methods
 // -------------------------------------------------
-.text-overflow (@w){
+.text-overflow (@w) {
     width: @w;
     overflow:hidden;
     white-space:nowrap;
@@ -70,7 +79,7 @@
 }
 
 // 未知尺寸图片居中 - 盒子 宽 高 
-.image-center(@width, @height){
+.image-center(@width, @height) {
 
     @_fontsize: round(@height * 0.873);
  
@@ -98,7 +107,7 @@
 }
 
 // inline-block
-.dib-wrap (){
+.dib-wrap () {
     font-size:0;/* 所有浏览器 */
     *word-spacing:-1px;/* IE6、7 */
     .dib{

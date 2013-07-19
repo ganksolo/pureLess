@@ -7,18 +7,18 @@
  * 
  */
 
-.sprites-btn-backTop                { background-position: 0 -707px; width: 50px; height: 50px; } 
-.sprites-btn-displayBriefhover      { background-position: 0 -807px; width: 24px; height: 22px; } 
-.sprites-btn-displayBrieflink       { background-position: 0 -879px; width: 24px; height: 22px; } 
-.sprites-btn-displayTitlehover      { background-position: 0 -951px; width: 24px; height: 22px; } 
-.sprites-btn-displayTitlelink       { background-position: 0 -1023px; width: 24px; height: 22px; } 
-.sprites-btn-industryTypehover      { background-position: 0 -1095px; width: 48px; height: 43px; } 
-.sprites-btn-industryTypelink       { background-position: 0 -1188px; width: 43px; height: 43px; } 
-.sprites-btn-newsTypehover          { background-position: 0 -1281px; width: 48px; height: 43px; } 
-.sprites-btn-newsTypelink           { background-position: 0 -1374px; width: 43px; height: 43px; } 
-.sprites-btn-noun                   { background-position: 0 -1467px; width: 48px; height: 15px; } 
-.sprites-btn-oneKeyRss              { background-position: 0 -1532px; width: 140px; height: 35px; } 
-.sprites-btn-rsshover               { background-position: 0 -1617px; width: 16px; height: 16px; } 
+.sprites-btn-backTop                { background-position: 0 -707px;} 
+.sprites-btn-displayBriefhover      { background-position: 0 -807px;} 
+.sprites-btn-displayBrieflink       { background-position: 0 -879px;} 
+.sprites-btn-displayTitlehover      { background-position: 0 -951px;} 
+.sprites-btn-displayTitlelink       { background-position: 0 -1023px;} 
+.sprites-btn-industryTypehover      { background-position: 0 -1095px;} 
+.sprites-btn-industryTypelink       { background-position: 0 -1188px;} 
+.sprites-btn-newsTypehover          { background-position: 0 -1281px;} 
+.sprites-btn-newsTypelink           { background-position: 0 -1374px;} 
+.sprites-btn-noun                   { background-position: 0 -1467px;} 
+.sprites-btn-oneKeyRss              { background-position: 0 -1532px;} 
+.sprites-btn-rsshover               { background-position: 0 -1617px;} 
 .sprites-btn-rsslink                { background-position: 0 -1683px;} 
 .sprites-btn-search                 { background-position: 0 -1749px;} 
 .sprites-btn-select-pull            { background-position: 0 -1834px;} 
@@ -37,15 +37,24 @@
 .sprites-rss-youdao                 { background-position: -293px -747px;} 
 
 
-//rpx
+// rpx
 .rpx-classNews                      {background-position: 0 0; height:42px;}
 .rpx-settingBar                     {background-position: 0 -48; height:27px;}
 
-//需设定背景图片规则以使用拼合图片. 例子:
+// 需设定背景图片规则以使用拼合图片. 例子:
 .ui-sprites{
     background-image:url("@{iconUiPath}");
 }
 .ui-gradient-x{
     background-image:url("@{iconUiRpxPath}");
     background-repeat:repeat-x;
+}
+.ui-gradient-y{
+    background-image:url("@{iconUiRpyPath}");
+    background-repeat:repeat-y;
+}
+
+// 单张图片bg
+.bg(@imgPath, @position:0 0) {
+    background:url("@{rootPath}@{imgPath}") ~"@{position}" no-repeat;
 }
