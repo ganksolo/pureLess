@@ -7,39 +7,69 @@
  * 
  */
 
-
-
 // Commonly used css3 properties
-// -------------------------
+// -------------------------------------------------
 .box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
     box-shadow: @arguments;
     -moz-box-shadow: @arguments;
     -webkit-box-shadow: @arguments;
 }
 //.box-shadow(2px, 5px);
-.border-radius (@r){
+.border-radius (@r: 3px){
     border-radius: @r;
     -moz-border-radius: @r;
     -webkit-border-radius: @r;
 }
+
+
+// Commonly used methods
+// -------------------------------------------------
 .text-overflow (@w){
     width: @w;
     overflow:hidden;
     white-space:nowrap;
     text-overflow:ellipsis;
 }
-.text-indent (){
+// 飞出去
+.text-indent {
     text-indent: -9999em;
 }
-//common css
-.break () {
+
+// common css
+.break {
     text-wrap: wrap;
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
     word-wrap: break-word;
 }
-// 未知尺寸图片居中
-// 盒子 宽 高 
+
+// link font
+.linkAction (@color1, @color2, @underline1: none, @underline2: underline) {
+    &:link, &:visited{
+        color: @c1;
+        text-decoration: @underline1;
+      }
+    &:hover, &:active{
+        color: @c2;
+        text-decoration :@underline2;
+    }
+}
+
+// link bg
+.linkActionBg (@color1, @bgc1, @color2, @bgc2, @underline1: none, @underline2: none) {
+    &:link, &:visited{
+        color: @c1;
+        background-color: @bgc1;
+        text-decoration: @underline1;
+      }
+    &:hover, &:active{
+        color: @c2;
+        background-color: @bgc2;
+        text-decoration :@underline2;
+    }
+}
+
+// 未知尺寸图片居中 - 盒子 宽 高 
 .image-center(@width, @height){
 
     @_fontsize: round(@height * 0.873);
@@ -61,25 +91,13 @@
   }
 }
 
-
-//透明属性
+// 透明属性
 .opacity(@opacity: 80) {
     opacity: @opacity / 100;
     filter: ~"alpha(opacity=@{opacity})";
 }
 
-//plain text interactive, except background color or image(Definition in current use page)!
-.linksInteractive (@c1 , @c2, @none: none, @underline: underline){
-    &:link, &:visited{
-        color: @c1;
-        text-decoration: @none;
-      }
-    &:hover, &:active{
-        color: @c2;
-        text-decoration :@underline;
-    }
-}
-//inline-block
+// inline-block
 .dib-wrap (){
     font-size:0;/* 所有浏览器 */
     *word-spacing:-1px;/* IE6、7 */
@@ -102,11 +120,7 @@
     *zoom:1;
 }
 
-
-/* 
- * Clear float and close label 
- */
-
+// Clear float and close label 
 .fn-clearfix:after {
     visibility: hidden;
     display: block;
@@ -119,25 +133,16 @@
 * html .fn-clearfix { height: 1%; /* for IE6 IE7 */}
 .fn-clearfix { display: block; } 
 
-/* 
- * Trigger IE haslayout
- */
-
+// Trigger IE haslayout
 .fn-zoom (){zoom:1;}
 
-/* 
- * Set inline, reduce floating brings bug 
- */
-
+// Set inline, reduce floating brings bug 
 .inline (){display:inline}
 .fn-fl (){float:left;.inline;}
 .fn-fr (){float:right;.inline;}
 body .fn-hide{display:none;}
 
-/* 
- * Used in js addClass or removeClass
- */
-
+// Used in js addClass or removeClass
 .fn-hide (){display:none;}
 
 

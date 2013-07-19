@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+// Core variables and mixins
+@import "variables.less";
+
+// PureLess Defined common style and function
+@import "pureLess.less";
+
+// Sprite icon
+@import "sprites.less";
+
+
+// 测试
+.s2 (wo, @color) {
+color: darken(@color, 10%);
+}
+.s2 (ni, @color) {
+color: lighten(@color, 10%);
+}
+.s2 (@_, @color) { // 匹配所有
+display: block;
+}
+
+
+
+.bigFont{
+    .s2 (ni, @linkColor);
+}
+.link1{
+    a{
+        .linkAction(@linkColor, @linkColorHover);
+    }
+}
+.link2{
+    a{
+        padding:4px;
+        .linkActionBg(@white, @pink, lighten(@gray, 10%), darken( @pink, 20%), underline, underline);
+    }
+}
+.link3{
+    a{
+        
+    }
+}.link4{
+    a{
+        
+    }
+}
