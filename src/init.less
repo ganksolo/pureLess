@@ -34,7 +34,11 @@ display: block;
 .link2{
     a{
         padding:4px;
-        .linkActionBg(@white, @pink, lighten(@gray, 10%), darken( @pink, 20%), underline, underline);
+        .linkActionBg(@white, @pink, lighten(@gray, 10%), darken( @pink, 20%));
+    }
+    a + a{
+        padding:4px;
+        .linkActionBg(@white, @purple, @white, lighten(@purple, 10%), underline);
     }
 }
 .link3{

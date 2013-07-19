@@ -46,11 +46,11 @@
 // link font
 .linkAction (@color1, @color2, @underline1: none, @underline2: underline) {
     &:link, &:visited{
-        color: @c1;
+        color: @color1;
         text-decoration: @underline1;
       }
     &:hover, &:active{
-        color: @c2;
+        color: @color2;
         text-decoration :@underline2;
     }
 }
@@ -58,12 +58,12 @@
 // link bg
 .linkActionBg (@color1, @bgc1, @color2, @bgc2, @underline1: none, @underline2: none) {
     &:link, &:visited{
-        color: @c1;
+        color: @color1;
         background-color: @bgc1;
         text-decoration: @underline1;
       }
     &:hover, &:active{
-        color: @c2;
+        color: @color2;
         background-color: @bgc2;
         text-decoration :@underline2;
     }
