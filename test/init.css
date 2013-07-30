@@ -1,52 +1,273 @@
-/* CSS crunched with Crunch - http://crunchapp.net/ */
 @charset "utf-8";
-.text-indent{text-indent:-9999em;}
-.break{text-wrap:wrap;white-space:pre-wrap;white-space:-moz-pre-wrap;word-wrap:break-word;}
-@media screen and (-webkit-min-device-pixel-ratio:0){.dib-wrap{letter-spacing:-5px;}}.dib{display:inline-block;*display:inline;*zoom:1;}
-.fn-clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
-.fn-clearfix{display:inline-table;}
-* html .fn-clearfix{height:1%;}
-.fn-clearfix{display:block;}
-body .fn-hide{display:none;}
-.sprites-btn-backTop{background-position:0 -707px;}
-.sprites-btn-displayBriefhover{background-position:0 -807px;}
-.sprites-btn-displayBrieflink{background-position:0 -879px;}
-.sprites-btn-displayTitlehover{background-position:0 -951px;}
-.sprites-btn-displayTitlelink{background-position:0 -1023px;}
-.sprites-btn-industryTypehover{background-position:0 -1095px;}
-.sprites-btn-industryTypelink{background-position:0 -1188px;}
-.sprites-btn-newsTypehover{background-position:0 -1281px;}
-.sprites-btn-newsTypelink{background-position:0 -1374px;}
-.sprites-btn-noun{background-position:0 -1467px;}
-.sprites-btn-oneKeyRss{background-position:0 -1532px;}
-.sprites-btn-rsshover{background-position:0 -1617px;}
-.sprites-btn-rsslink{background-position:0 -1683px;}
-.sprites-btn-search{background-position:0 -1749px;}
-.sprites-btn-select-pull{background-position:0 -1834px;}
-.sprites-btn-snapshot{background-position:0 -1912px;}
-.sprites-btn-tqq{background-position:-293px 0;}
-.sprites-btn-weibo{background-position:-293px -66px;}
-.sprites-icon-bar{background-position:-293px -123px;}
-.sprites-icon-point-gray{background-position:-290px -180px;}
-.sprites-logo-news{background-position:-293px -245px;}
-.sprites-rss-foxmail{background-position:-293px -339px;}
-.sprites-rss-google{background-position:-293px -407px;}
-.sprites-rss-live{background-position:-293px -475px;}
-.sprites-rss-tangguo{background-position:-293px -543px;}
-.sprites-rss-xianguo{background-position:-293px -611px;}
-.sprites-rss-yahoo{background-position:-293px -679px;}
-.sprites-rss-youdao{background-position:-293px -747px;}
-.rpx-classNews{background-position:0 0;height:42px;}
-.rpx-settingBar{background-position:0 -48;height:27px;}
-.ui-sprites{background-image:url("../img/sprites/ui-ucenter.gif");}
-.ui-gradient-x{background-image:url("../img/sprites/ui-bg-rpx.png");background-repeat:repeat-x;}
-.ui-gradient-y{background-image:url("../img/sprites/ui-bg-rpy.png");background-repeat:repeat-y;}
-.bigFont{color:#00aaff;display:block;}
-.link1 a:link,.link1 a:visited{color:#0088cc;text-decoration:none;}
-.link1 a:hover,.link1 a:active{color:#004466;text-decoration:underline;}
-.link2 a{padding:4px;}.link2 a:link,.link2 a:visited{color:#ffffff;background-color:#c3325f;text-decoration:none;}
-.link2 a:hover,.link2 a:active{color:#808080;background-color:#721d37;text-decoration:none;}
-.link2 a+a{padding:4px;}.link2 a+a:link,.link2 a+a:visited{color:#ffffff;background-color:#7a43b6;text-decoration:underline;}
-.link2 a+a:hover,.link2 a+a:active{color:#ffffff;background-color:#9466c6;text-decoration:none;}
-.slide1{background:url("../img/FlatUIColors.png") 0 0 no-repeat;width:202px;height:192px;}
-.slide2{background:url("../img/FlatUIColors.png") -10px -10px no-repeat;padding:0 10px 10px 0;width:202px;height:192px;}
+/**
+ * 全局变量
+ *
+ * 
+ * @filename :  variables.less;
+ * @author   :  f2engineer@outlook.com;
+ * 
+ */
+/**
+ * 定义一些常用的函数和方法
+ *
+ * 
+ * @filename :  pureLess.less;
+ * @author   :  f2engineer@outlook.com;
+ * 
+ */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
+  .dib-wrap {
+    letter-spacing: -5px;
+    /* Safari 等不支持字体大小为 0 的浏览器, 根据父级字体调节*/
+  
+  }
+}
+.dib {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.fn-clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.fn-clearfix {
+  display: inline-table;
+}
+* html .fn-clearfix {
+  height: 1%;
+  /* for IE6 IE7 */
+}
+.fn-clearfix {
+  display: block;
+}
+body .fn-hide {
+  display: none;
+}
+/**
+ * 雪碧图
+ *
+ * 
+ * @filename :  sprites.less;
+ * @author   :  f2engineer@outlook.com;
+ * 
+ */
+.sprites-btn-backTop {
+  background-position: 0 -707px;
+}
+.sprites-btn-displayBriefhover {
+  background-position: 0 -807px;
+}
+.sprites-btn-displayBrieflink {
+  background-position: 0 -879px;
+}
+.sprites-btn-displayTitlehover {
+  background-position: 0 -951px;
+}
+.sprites-btn-displayTitlelink {
+  background-position: 0 -1023px;
+}
+.sprites-btn-industryTypehover {
+  background-position: 0 -1095px;
+}
+.sprites-btn-industryTypelink {
+  background-position: 0 -1188px;
+}
+.sprites-btn-newsTypehover {
+  background-position: 0 -1281px;
+}
+.sprites-btn-newsTypelink {
+  background-position: 0 -1374px;
+}
+.sprites-btn-noun {
+  background-position: 0 -1467px;
+}
+.sprites-btn-oneKeyRss {
+  background-position: 0 -1532px;
+}
+.sprites-btn-rsshover {
+  background-position: 0 -1617px;
+}
+.sprites-btn-rsslink {
+  background-position: 0 -1683px;
+}
+.sprites-btn-search {
+  background-position: 0 -1749px;
+}
+.sprites-btn-select-pull {
+  background-position: 0 -1834px;
+}
+.sprites-btn-snapshot {
+  background-position: 0 -1912px;
+}
+.sprites-btn-tqq {
+  background-position: -293px 0;
+}
+.sprites-btn-weibo {
+  background-position: -293px -66px;
+}
+.sprites-icon-bar {
+  background-position: -293px -123px;
+}
+.sprites-icon-point-gray {
+  background-position: -290px -180px;
+}
+.sprites-logo-news {
+  background-position: -293px -245px;
+}
+.sprites-rss-foxmail {
+  background-position: -293px -339px;
+}
+.sprites-rss-google {
+  background-position: -293px -407px;
+}
+.sprites-rss-live {
+  background-position: -293px -475px;
+}
+.sprites-rss-tangguo {
+  background-position: -293px -543px;
+}
+.sprites-rss-xianguo {
+  background-position: -293px -611px;
+}
+.sprites-rss-yahoo {
+  background-position: -293px -679px;
+}
+.sprites-rss-youdao {
+  background-position: -293px -747px;
+}
+.rpx-classNews {
+  background-position: 0 0;
+  height: 42px;
+}
+.rpx-settingBar {
+  background-position: 0 -48;
+  height: 27px;
+}
+.ui-sprites {
+  background-image: url("../img/sprites/ui-ucenter.gif");
+}
+.ui-gradient-x {
+  background-image: url("../img/sprites/ui-bg-rpx.png");
+  background-repeat: repeat-x;
+}
+.ui-gradient-y {
+  background-image: url("../img/sprites/ui-bg-rpy.png");
+  background-repeat: repeat-y;
+}
+.bigFont {
+  color: #00aaff;
+  display: block;
+}
+.link1 a:link,
+.link1 a:visited {
+  color: #0088cc;
+  text-decoration: none;
+}
+.link1 a:hover,
+.link1 a:active {
+  color: #000000;
+  text-decoration: underline;
+}
+.link2 a {
+  padding: 4px;
+}
+.link2 a:link,
+.link2 a:visited {
+  color: #ffffff;
+  background-color: #c3325f;
+  text-decoration: none;
+}
+.link2 a:hover,
+.link2 a:active {
+  color: #e6e6e6;
+  background-color: #721d37;
+  text-decoration: none;
+}
+.link2 a + a {
+  padding: 4px;
+}
+.link2 a + a:link,
+.link2 a + a:visited {
+  color: #ffffff;
+  background-color: #7a43b6;
+  text-decoration: underline;
+}
+.link2 a + a:hover,
+.link2 a + a:active {
+  color: #ffffff;
+  background-color: #9466c6;
+  text-decoration: none;
+}
+.slide1 {
+  background: url("../img/FlatUIColors.png") 0 0 no-repeat;
+  width: 202px;
+  height: 192px;
+}
+.slide2 {
+  background: url("../img/FlatUIColors.png") -10px -10px no-repeat;
+  padding: 0 10px 10px 0;
+  width: 202px;
+  height: 192px;
+}
+.word-wrap,
+.no-wrap {
+  width: 600px;
+}
+.normal {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.complex {
+  font-size: 0;
+  /* 所有浏览器 */
+
+  *word-spacing: -1px;
+  /* IE6、7 */
+
+  font-size: 12px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+}
+.complex .dib {
+  font-size: 12px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+}
+.complex a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  font-size: 14px;
+  padding: 3px 5px;
+  margin-top: 5px;
+}
+.complex a:link,
+.complex a:visited {
+  color: #ffffff;
+  background-color: #42941d;
+  text-decoration: none;
+}
+.complex a:hover,
+.complex a:active {
+  color: #ffffff;
+  background-color: #6eda3d;
+  text-decoration: none;
+}
+.no-wrap .complex {
+  float: left;
+  display: inline;
+  width: 600px;
+}
+.no-wrap .complex a {
+  float: left;
+  display: inline;
+  margin-right: 10px;
+}

@@ -40,20 +40,23 @@
     text-overflow:ellipsis;
 }
 // 飞出去
-.text-indent {
+.text-indent (){
     text-indent: -9999em;
 }
 
-// common css
-.break {
-    text-wrap: wrap;
-    white-space: pre-wrap;
-    white-space: -moz-pre-wrap;
-    word-wrap: break-word;
+// 自动换行(强制断开)
+.wordwrap (){
+    word-wrap: break-word;  
+    word-break: break-all;       //会强制英文单词断行
 }
 
-// link font
-.linkAction (@color1, @color2, @underline1: none, @underline2: underline) {
+// 禁止换行
+.nowrap (){
+    white-space: nowrap;
+}
+
+// link font 
+.linkAction ('font', @color1, @color2, @underline1: none, @underline2: underline) {
     &:link, &:visited{
         color: @color1;
         text-decoration: @underline1;
@@ -64,8 +67,8 @@
     }
 }
 
-// link bg
-.linkActionBg (@color1, @bgc1, @color2, @bgc2, @underline1: none, @underline2: none) {
+// link background -> bg
+.linkAction ('bg', @color1, @bgc1, @color2, @bgc2, @underline1: none, @underline2: none) {
     &:link, &:visited{
         color: @color1;
         background-color: @bgc1;

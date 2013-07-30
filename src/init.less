@@ -28,17 +28,17 @@ display: block;
 }
 .link1{
     a{
-        .linkAction(@linkColor, @linkColorHover);
+        .linkAction('font', @linkColor, darken(@linkColorHover, 20%));
     }
 }
 .link2{
     a{
         padding:4px;
-        .linkActionBg(@white, @pink, lighten(@gray, 10%), darken( @pink, 20%));
+        .linkAction('bg', @white, @pink, lighten(@gray, 50%), darken( @pink, 20%));
     }
     a + a{
         padding:4px;
-        .linkActionBg(@white, @purple, @white, lighten(@purple, 10%), underline);
+        .linkAction('bg', @white, @purple, @white, lighten(@purple, 10%), underline);
     }
 }
 .slide1{
@@ -52,3 +52,33 @@ display: block;
     width:202px;
     height:192px;
 }
+.word-wrap, .no-wrap{
+    width:600px;
+}
+.normal{
+    .wordwrap;
+}
+.complex{
+    // 一般设置宽度后会自动换行
+    .dib-wrap;
+    .dib-wrap > .dib;
+    a{
+        .dib;
+        font-size: 14px;
+        padding:3px 5px;
+        margin-top: 5px;
+        .linkAction('bg', @white, darken(@green, 10%), @white, lighten(@green, 10%));
+    }
+}
+.no-wrap{
+    .complex{
+        .fn-fl;
+        width:600px;
+        // 由float 引起的换行问题
+        a{
+            .fn-fl;
+            margin-right: 10px;
+        }
+    }
+}
+
